@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Ar-Rum - Undangan Pernikahan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Background animasi 3D -->
+    <div class="animation-3d">
+        <div class="floating-hearts"></div>
+        <div class="floating-rings"></div>
+        <div class="floating-flowers"></div>
+    </div>
+    
+    <div class="container">
+        <div class="ar-rum-page">
+            <!-- Header -->
+            <div class="ar-rum-header">
+                <button class="back-btn" onclick="window.location.href='undangan.html'">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Undangan
+                </button>
+                <h1><i class="fas fa-book-quran"></i> Surat Ar-Rum</h1>
+                <p class="subtitle">Surah ke-30 dalam Al-Qur'an - Ayat tentang Pernikahan</p>
+            </div>
+            
+            <!-- Konten utama -->
+            <div class="ar-rum-content">
+                <div class="verse-highlight">
+                    <div class="verse-number">Ayat 21</div>
+                    <div class="verse-arabic">
+                        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+                    </div>
+                    <div class="verse-translation">
+                        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
+                    </div>
+                </div>
+                
+                <div class="ar-rum-info">
+                    <h2><i class="fas fa-info-circle"></i> Makna dalam Konteks Pernikahan</h2>
+                    <p>Surat Ar-Rum ayat 21 ini sering dikutip dalam konteks pernikahan karena menjelaskan tentang salah satu tanda kebesaran Allah SWT, yaitu penciptaan pasangan hidup dari jenis yang sama untuk menciptakan ketenangan, cinta, dan kasih sayang di antara mereka.</p>
+                    
+                    <div class="meaning-points">
+                        <div class="point">
+                            <div class="point-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Ketenteraman Hati</h3>
+                            <p>Allah menciptakan pasangan hidup agar kita menemukan ketenangan dan kedamaian di samping mereka.</p>
+                        </div>
+                        
+                        <div class="point">
+                            <div class="point-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Cinta dan Kasih Sayang</h3>
+                            <p>Allah menanamkan rasa cinta (mawaddah) dan kasih sayang (rahmah) di antara pasangan suami istri.</p>
+                        </div>
+                        
+                        <div class="point">
+                            <div class="point-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Tanda Kekuasaan Allah</h3>
+                            <p>Penciptaan pasangan hidup merupakan bukti kebesaran Allah bagi orang-orang yang berpikir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="full-surah">
+                    <h2><i class="fas fa-book-open"></i> Surat Ar-Rum Lengkap</h2>
+                    <div class="surah-navigation">
+                        <button class="btn surah-btn" data-verse="1-10">Ayat 1-10</button>
+                        <button class="btn surah-btn" data-verse="11-20">Ayat 11-20</button>
+                        <button class="btn surah-btn active" data-verse="21-25">Ayat 21-25</button>
+                        <button class="btn surah-btn" data-verse="26-35">Ayat 26-35</button>
+                        <button class="btn surah-btn" data-verse="36-45">Ayat 36-45</button>
+                        <button class="btn surah-btn" data-verse="46-60">Ayat 46-60</button>
+                    </div>
+                    
+                    <div class="verse-container">
+                        <div class="verse-display" id="verseDisplay">
+                            <!-- Ayat akan dimuat via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="prayer-section">
+                    <h2><i class="fas fa-hands-praying"></i> Doa untuk Pengantin</h2>
+                    <div class="prayer-card">
+                        <div class="prayer-arabic">
+                            بَارَكَ اللهُ لَكَ، وَبَارَكَ عَلَيْكَ، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                        </div>
+                        <div class="prayer-meaning">
+                            "Semoga Allah memberkahimu di waktu senang dan susah, dan semoga Dia menyatukan kalian berdua dalam kebaikan."
+                        </div>
+                        <p class="prayer-source">(HR. Abu Dawud, Tirmidzi, dan lainnya)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="ar-rum-footer">
+                <p>Semoga pernikahan Sarah & Rizky dilimpahkan berkah, ketenangan, cinta, dan kasih sayang sebagaimana yang disebutkan dalam Surat Ar-Rum ayat 21.</p>
+                <div class="action-buttons">
+                    <a href="index.html" class="btn"><i class="fas fa-home"></i> Halaman Awal</a>
+                    <a href="undangan.html" class="btn primary-btn"><i class="fas fa-heart"></i> Kembali ke Undangan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Masukkan Nama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Background animasi 3D -->
+    <div class="animation-3d">
+        <div class="floating-hearts"></div>
+        <div class="floating-rings"></div>
+        <div class="floating-flowers"></div>
+    </div>
+    
+    <div class="container">
+        <div class="invitation-card">
+            <div class="header">
+                <h1 class="title">Undangan Pernikahan</h1>
+                <div class="couple-names">
+                    <span class="bride-name">Sarah</span>
+                    <i class="fas fa-heart heart-icon"></i>
+                    <span class="groom-name">Rizky</span>
+                </div>
+                <p class="date">Sabtu, 15 Juni 2024</p>
+            </div>
+            
+            <div class="content">
+                <div class="form-section">
+                    <h2><i class="fas fa-envelope-open-text"></i> Masukkan Nama Tamu</h2>
+                    <p class="form-description">Buat link undangan personal untuk tamu Anda</p>
+                    
+                    <form id="guestForm">
+                        <div class="input-group">
+                            <label for="guestName"><i class="fas fa-user"></i> Nama Tamu</label>
+                            <input type="text" id="guestName" placeholder="Contoh: Bapak Ahmad Wijaya" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="guestGroup"><i class="fas fa-users"></i> Grup Tamu</label>
+                            <select id="guestGroup">
+                                <option value="keluarga">Keluarga</option>
+                                <option value="teman" selected>Teman</option>
+                                <option value="rekan">Rekan Kerja</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="button" id="generateBtn" class="btn generate-btn">
+                                <i class="fas fa-random"></i> Generate Nama Contoh
+                            </button>
+                            <button type="submit" class="btn submit-btn">
+                                <i class="fas fa-link"></i> Buat Link Undangan
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="link-result" id="linkResult" style="display: none;">
+                        <h3><i class="fas fa-link"></i> Link Undangan Telah Dibuat</h3>
+                        <div class="link-box">
+                            <input type="text" id="generatedLink" readonly class="link-input">
+                            <button class="btn copy-btn" id="copyLinkBtn">
+                                <i class="fas fa-copy"></i> Salin Link
+                            </button>
+                        </div>
+                        <p class="link-instruction">Kirim link ini ke tamu via WhatsApp atau Telegram</p>
+                        <div class="action-buttons">
+                            <button class="btn whatsapp-btn" id="whatsappBtn">
+                                <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                            </button>
+                            <button class="btn new-link-btn" id="newLinkBtn">
+                                <i class="fas fa-plus"></i> Buat Link Baru
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="generated-names">
+                        <p><i class="fas fa-lightbulb"></i> <strong>Contoh nama:</strong> <span id="nameSamples">Bapak Imam, Ibu Siti, dll.</span></p>
+                        <button id="refreshNames" class="btn small-btn"><i class="fas fa-redo"></i> Contoh Lain</button>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3><i class="fas fa-eye"></i> Preview Undangan</h3>
+                    <div class="preview-card">
+                        <div class="preview-content">
+                            <p class="preview-text">Kepada Yth:</p>
+                            <h4 id="previewName">[Nama Tamu]</h4>
+                            <p class="preview-text">Anda diundang untuk menghadiri acara pernikahan kami</p>
+                            <div class="preview-couple">
+                                <span>Sarah</span>
+                                <i class="fas fa-heart"></i>
+                                <span>Rizky</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="undangan.html?nama=Tamu%20Undangan" class="btn preview-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lihat Preview Undangan
+                        </a>
+                        <a href="admin.html" class="btn admin-btn">
+                            <i class="fas fa-users-cog"></i> Halaman Admin
+                        </a>
+                    </div>
+                    <p class="note"><i class="fas fa-info-circle"></i> Link yang dibuat akan langsung mengarah ke undangan dengan nama tamu yang terisi.</p>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>Website Undangan Pernikahan Sarah & Rizky</p>
+                <div class="footer-links">
+                    <a href="surat-ar-rum.html" class="btn ar-rum-btn">
+                        <i class="fas fa-book-quran"></i> Surat Ar-Rum
+                    </a>
+                    <button class="btn music-toggle" id="homeMusicToggle">
+                        <i class="fas fa-music"></i> <span id="musicStatus">Musik: OFF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio untuk musik latar -->
+    <audio id="homeMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-day-560.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- QR Code Modal -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-qrcode"></i> QR Code Undangan</h3>
+            <div class="qr-container">
+                <div id="qrcode"></div>
+            </div>
+            <p>Scan QR code ini untuk membuka undangan</p>
+        </div>
+    </div>
+    
+    <script src="generator.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</body>
+</html>

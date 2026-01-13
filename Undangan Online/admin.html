@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Daftar Tamu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="admin-page">
+            <!-- Header -->
+            <div class="admin-header">
+                <button class="back-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+                <h1><i class="fas fa-users-cog"></i> Admin Daftar Tamu</h1>
+                <p class="subtitle">Kelola daftar tamu undangan pernikahan</p>
+            </div>
+            
+            <!-- Statistik -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Total Tamu</h3>
+                    <p class="stat-number" id="totalGuests">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Sudah RSVP</h3>
+                    <p class="stat-number" id="totalRsvp">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Link Dibuat</h3>
+                    <p class="stat-number" id="totalLinks">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Dibuka</h3>
+                    <p class="stat-number" id="totalOpened">0</p>
+                </div>
+            </div>
+            
+            <!-- Konten utama -->
+            <div class="admin-content">
+                <!-- Form tambah tamu -->
+                <div class="admin-section">
+                    <h2><i class="fas fa-user-plus"></i> Tambah Tamu Baru</h2>
+                    <div class="admin-form">
+                        <div class="input-group">
+                            <label for="adminGuestName">Nama Tamu</label>
+                            <input type="text" id="adminGuestName" placeholder="Masukkan nama tamu">
+                        </div>
+                        <div class="input-group">
+                            <label for="adminGuestGroup">Grup Tamu</label>
+                            <select id="adminGuestGroup">
+                                <option value="keluarga">Keluarga</option>
+                                <option value="teman" selected>Teman</option>
+                                <option value="rekan">Rekan Kerja</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="adminGuestPhone">No. WhatsApp (Opsional)</label>
+                            <input type="tel" id="adminGuestPhone" placeholder="Contoh: 081234567890">
+                        </div>
+                        <button class="btn submit-btn" id="adminAddGuest">
+                            <i class="fas fa-plus"></i> Tambah Tamu
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Daftar tamu -->
+                <div class="admin-section">
+                    <h2><i class="fas fa-list"></i> Daftar Tamu</h2>
+                    <div class="table-container">
+                        <table class="guest-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Tamu</th>
+                                    <th>Grup</th>
+                                    <th>Link Undangan</th>
+                                    <th>RSVP</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="guestTableBody">
+                                <tr>
+                                    <td colspan="6" class="empty-table">Belum ada tamu yang ditambahkan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Export data -->
+                    <div class="admin-actions">
+                        <button class="btn secondary-btn" id="exportGuests">
+                            <i class="fas fa-file-export"></i> Export ke CSV
+                        </button>
+                        <button class="btn secondary-btn" id="clearAllGuests">
+                            <i class="fas fa-trash"></i> Hapus Semua
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="admin-footer">
+                <p>© 2024 Admin Undangan Pernikahan Sarah & Rizky</p>
+                <p>Gunakan halaman ini untuk mengelola daftar tamu undangan</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="admin.js"></script>
+</body>
+</html>
